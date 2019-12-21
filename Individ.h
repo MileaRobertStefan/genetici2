@@ -12,6 +12,8 @@ public:
 	bool exista_culori_adiacente();
 	bool exista_culori_adiacente(int);
 	void elimina_culori_adiacente();
+	int  cate_culori_am();
+	void update_id_culori();
 private:
 	void mutatie() {};
 	void crossOver() {};
