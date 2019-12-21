@@ -41,10 +41,26 @@ void Individ::elimina_culori_adiacente()
 			{
 				do {
 					trasaturi.initiere_random(i);
+					id_culori[i] = trasaturi.decodificare(i);
 				} while (exista_culori_adiacente(i));
 			}
 		}
 	}
+}
+int Individ::cate_culori_am()
+{
+	int vec[256] = { 0 };
+	for (auto j : id_culori)
+		vec[j]++;
+	int sum = 0;
+	for (int i = 0; i < 256; ++i)
+		sum += vec[i] != 0;
+	return sum;
+}
+void Individ::update_id_culori()
+{
+	for (int i = 1; i < graf->graf.size(); ++i)
+		id_culori[i] = trasaturi.decodificare(i);
 }
 // FOLOSESTE ASTA std::vector<std::vector<int>>& lista_muchii = graf->graf;
 void Individ::print_culori()
