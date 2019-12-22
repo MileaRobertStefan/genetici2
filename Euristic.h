@@ -22,6 +22,7 @@ public:
 		}
 		std::cout << count;
 		return 0;
+
 	}
 
 	void simulated_annealing(Graf *g)
@@ -72,6 +73,7 @@ public:
 				}
 			} while (temperatura > 1);
 			delete[] raspuns;
+
 	}
 	Euristic(Individ a) : cobai(a) {};
 
